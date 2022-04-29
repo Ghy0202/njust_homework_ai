@@ -1,0 +1,3 @@
+﻿  main2.cpp
+E:\2022大三下课程资料\图像处理\作业\code\WEEK2\Exam2\Exam2\main2.cpp(90,8): warning C4244: “=”: 从“double”转换到“unsigned char”，可能丢失数据
+  Exam2.vcxproj -> E:\2022大三下课程资料\图像处理\作业\code\WEEK2\Exam2\x64\Debug\Exam2.exe

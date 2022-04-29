@@ -214,7 +214,7 @@ void RmwHistogramEqualizeColor(BYTE* pImg, int width, int height) {
 		pCur++;
 		*(pCur) = LUT[*pCur][1];
 		pCur++;
-		*(pCur) = LUT[*pCur][1];
+		*(pCur) = LUT[*pCur][2];
 		pCur++;
 	}
 	return;

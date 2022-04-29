@@ -8,9 +8,9 @@
 #include"bmpFile.h"
 
 using namespace std;
-/*ÈÎÎñ1£º²ÊÉ«Í¼Ïñ×ª»¯³É»Ò¶ÈÍ¼Ïñ*/
+/*ä»»åŠ¡1ï¼šå½©è‰²å›¾åƒè½¬åŒ–æˆç°åº¦å›¾åƒ*/
 void Color2Gry_Count(unsigned char* pImg, int width, int height) {
-	//ÀûÓÃ¼ÆËãµÄ·½Ê½
+	//åˆ©ç”¨è®¡ç®—çš„æ–¹å¼
 	unsigned char* p = pImg, * pEnd = pImg + height * width * 3;
 	for (; p != pEnd; p++) {
 		int r = *p;
@@ -25,7 +25,7 @@ void Color2Gry_Count(unsigned char* pImg, int width, int height) {
 }
 int LUT[256][256][256];
 void Color2Gry_Table(unsigned char *pImg,int width,int height) {
-	//ÀûÓÃ²éÕÒ±íµÄ·½Ê½
+	//åˆ©ç”¨æŸ¥æ‰¾è¡¨çš„æ–¹å¼
 	unsigned char* p = pImg, * pEnd = pImg + height * width * 3;
 	for (; p != pEnd; p++) {
 		int r = *p;
@@ -39,7 +39,7 @@ void Color2Gry_Table(unsigned char *pImg,int width,int height) {
 	
 }
 void Exam2_1() {
-	/*----------------------¼ÓÔØÍ¼Ïñ----------------------------*/
+	/*----------------------åŠ è½½å›¾åƒ----------------------------*/
 	unsigned char* pRgbImg;
 	unsigned char *pRgbImg_copy;
 	int width, height;
@@ -51,9 +51,9 @@ void Exam2_1() {
 		getchar();
 		return;
 	}
-	/*---------------1»ùÓÚ²éÕÒ±íµÄ·½Ê½-----------------------*/
+	/*---------------1åŸºäºæŸ¥æ‰¾è¡¨çš„æ–¹å¼-----------------------*/
 	clock_t start_t = clock();
-	//³õÊ¼»¯²éÕÒ±í
+	//åˆå§‹åŒ–æŸ¥æ‰¾è¡¨
 	for (int r = 0; r < 256; r++) {
 		for (int g = 0; g < 256; g++) {
 			for (int b = 0; b < 256; b++) {
@@ -64,12 +64,12 @@ void Exam2_1() {
 	for (int i = 0; i < 1000; i++) {
 		Color2Gry_Table(pRgbImg,width,height);
 	}
-	//½«Êı¾İ»ØĞ´
+	//å°†æ•°æ®å›å†™
 	Rmw_Write24BitImg2BmpFile(pRgbImg, width, height, "./res_data/H0201Gry_table.bmp");
 	clock_t end_t = clock();
-	printf("»ùÓÚ²éÕÒ±íµÄ·½·¨ºÄÊ±:%d\n", end_t - start_t);
+	printf("åŸºäºæŸ¥æ‰¾è¡¨çš„æ–¹æ³•è€—æ—¶:%d\n", end_t - start_t);
 
-	/*----------------2»ùÓÚ¼ÆËãµÄ·½·¨------------------------------------*/
+	/*----------------2åŸºäºè®¡ç®—çš„æ–¹æ³•------------------------------------*/
 	start_t = clock();
 	unsigned char* pImg;
 	for (int i = 0; i < 1000; i++) {
@@ -78,12 +78,12 @@ void Exam2_1() {
 	}
 	Rmw_Write24BitImg2BmpFile(pImg, width, height, "./res_data/H0201Gry_count.bmp");
 	end_t = clock();
-	printf("»ùÓÚ¼ÆËãµÄµÄ·½·¨ºÄÊ±:%d\n", end_t - start_t);
+	printf("åŸºäºè®¡ç®—çš„çš„æ–¹æ³•è€—æ—¶:%d\n", end_t - start_t);
 }
 
-/*ÈÎÎñ2£º¾ùÖµ·½²î¹æ¶¨»¯*/
+/*ä»»åŠ¡2ï¼šå‡å€¼æ–¹å·®è§„å®šåŒ–*/
 void Mean_variance_specification(unsigned char* pImg, int width, int height,double b1,double c1,double b2,double c2) {
-	//b1Ô­Ê¼¾ùÖµ c1Ô­Ê¼·½²î
+	//b1åŸå§‹å‡å€¼ c1åŸå§‹æ–¹å·®
 	unsigned char* p = pImg, * pEnd = pImg + height * width ;
 
 	while (p != pEnd) {
@@ -93,7 +93,7 @@ void Mean_variance_specification(unsigned char* pImg, int width, int height,doub
 
 }
 void Stretch(unsigned char* pImg, int width, int height, int gmin, int gmax, int Gmin, int Gmax) {
-	//ÏßĞÔÀ­Éì
+	//çº¿æ€§æ‹‰ä¼¸
 	int k = (Gmax - Gmin) / (gmax - gmin);
 	int b = Gmin - k * gmin;
 	unsigned char* p = pImg, *pEnd = pImg + height * width;
@@ -103,7 +103,7 @@ void Stretch(unsigned char* pImg, int width, int height, int gmin, int gmax, int
 	}
 }
 void Exam2_2() {
-	/*----------------------¼ÓÔØÍ¼Ïñ----------------------------*/
+	/*----------------------åŠ è½½å›¾åƒ----------------------------*/
 	unsigned char* pGryImg;
 	int width, height;
 	pGryImg = Rmw_Read8BitBmpFile2Img("./data/H0201Grey.bmp", &width, &height);
@@ -114,19 +114,19 @@ void Exam2_2() {
 		return;
 	}
 	else {
-		printf("³É¹¦¼ÓÔØ!\n");
+		printf("æˆåŠŸåŠ è½½!\n");
 	}
-	//»ñÈ¡b1,c1
+	//è·å–b1,c1
 	double b1, c1;
 	int* histogram = new int[256];
 	RmwGetHistogram(pGryImg, width, height,histogram);
 	GetBrightContrast(histogram, &b1, &c1);
 	printf("c=%.f  b=%.f\n", c1, b1);
-	//»ñÈ¡Ô­Ê¼×î´óÖµ×îĞ¡Öµ
+	//è·å–åŸå§‹æœ€å¤§å€¼æœ€å°å€¼
 	int gmin, gmax;
 	GetMinMaxGry(histogram, &gmin, &gmax);
 	printf("min=%d max=%d\n", gmin, gmax);
-	//½ÓÏÂÀ´¾ùÖµ·½²î¹æ¶¨»¯²Ù×÷
+	//æ¥ä¸‹æ¥å‡å€¼æ–¹å·®è§„å®šåŒ–æ“ä½œ
 	double b2[] = {16,10,20,21,30};
 	double c2[] = {17,19,30,40,40};
 	string path = "./res_data/H0201Gry_mvs_stretch";
@@ -142,9 +142,9 @@ void Exam2_2() {
 		Rmw_Write8BitImg2BmpFile(pImg, width, height, fpath.c_str());
 	}
 }
-/*ÈÎÎñ3£º¾ùºâ»¯*/
+/*ä»»åŠ¡3ï¼šå‡è¡¡åŒ–*/
 void Exam2_3() {
-	/*----------------------¼ÓÔØÍ¼Ïñ----------------------------*/
+	/*----------------------åŠ è½½å›¾åƒ----------------------------*/
 	unsigned char* pGryImg;
 	int width, height;
 	pGryImg = Rmw_Read8BitBmpFile2Img("./data/H0203Girl.bmp", &width, &height);
@@ -155,60 +155,60 @@ void Exam2_3() {
 		return;
 	}
 	else {
-		printf("³É¹¦¼ÓÔØ!\n");
+		printf("æˆåŠŸåŠ è½½!\n");
 	}
-	//¾ùºâ»¯
+	//å‡è¡¡åŒ–
 	RmwHistogramEqualizeDemo(pGryImg, width, height);
-	//±£´æÍ¼Ïñ
+	//ä¿å­˜å›¾åƒ
 	string fpath = "./res_data/H0203Girl_res.bmp";
 	Rmw_Write8BitImg2BmpFile(pGryImg, width, height, fpath.c_str());
 }
-/*ÈÎÎñ4£º²ÊÉ«Í¼Æ¬µÄ¾ùºâ»¯*/
+/*ä»»åŠ¡4ï¼šå½©è‰²å›¾ç‰‡çš„å‡è¡¡åŒ–*/
 void RmwHistogramEqualizeGry(BYTE* pGryImg, int width, int height)
 {
 	BYTE* pCur, * pEnd = pGryImg + width * height;
 	int histogram[256], A[256], LUT[256], g;
 
-	// step.1-------------ÇóÖ±·½Í¼--------------------------//
+	// step.1-------------æ±‚ç›´æ–¹å›¾--------------------------//
 	memset(histogram, 0, sizeof(int) * 256);
 	for (pCur = pGryImg; pCur < pEnd;) histogram[*(pCur++)]++;
-	// step.2-------------ÇóA[g],N-------------------------//
+	// step.2-------------æ±‚A[g],N-------------------------//
 	for (g = 1, A[0] = histogram[0]; g < 256; g++)
 	{
 		A[g] = A[g - 1] + histogram[g];
 	}
-	// step.3-------------ÇóLUT[g]-------------------------//
+	// step.3-------------æ±‚LUT[g]-------------------------//
 	for (g = 0; g < 256; g++) LUT[g] = 255 * A[g] / (width * height);
-	// step.4-------------²é±í------------------------------//
+	// step.4-------------æŸ¥è¡¨------------------------------//
 	for (pCur = pGryImg; pCur < pEnd;) *(pCur++) = LUT[*pCur];
-	// step.5-------------½áÊø------------------------------//
+	// step.5-------------ç»“æŸ------------------------------//
 	return;
 }
 void RmwHistogramEqualizeColor(BYTE* pImg, int width, int height) {
 	BYTE* pCur, * pEnd = pImg + width * height*3;
 	int histogram[256][3], A[256][3], LUT[256][3], g;
-	//RGBÈıÍ¨µÀ
+	//RGBä¸‰é€šé“
 	memset(histogram, sizeof(histogram), 0);
-	//1:ÇóÖ±·½Í¼
+	//1:æ±‚ç›´æ–¹å›¾
 	for (pCur = pImg; pCur < pEnd; pCur++) {
 		int r = *pCur; histogram[*(pCur++)][0]++;
 		int g = *(++pCur); histogram[*(pCur++)][1]++;
 		int b = *(++pCur); histogram[*(pCur++)][2]++;
 	}
-	//2:ÇóA[g]
+	//2:æ±‚A[g]
 	for (g = 1, A[0][0] = histogram[0][0], A[0][1] = histogram[0][1], A[0][2] = histogram[0][2]; g < 256; g++)
 	{
 		A[g][0] = A[g - 1] [0] + histogram[g][0];//R
 		A[g][1] = A[g - 1][1] + histogram[g][1];//G
 		A[g][2] = A[g - 1][2] + histogram[g][2];//B
 	}
-	//3:ÇóLUT[g]
+	//3:æ±‚LUT[g]
 	for (g = 0; g < 256; g++) {
 		LUT[g][0] = 255 * A[g][0] / (width * height);
 		LUT[g][1] = 255 * A[g][1] / (width * height);
 		LUT[g][2] = 255 * A[g][2] / (width * height);
 	}
-	//4:²é±í
+	//4:æŸ¥è¡¨
 	for (pCur = pImg; pCur < pEnd;) {
 		*(pCur) = LUT[*pCur][0];
 		pCur++;
@@ -216,6 +216,33 @@ void RmwHistogramEqualizeColor(BYTE* pImg, int width, int height) {
 		pCur++;
 		*(pCur) = LUT[*pCur][1];
 		pCur++;
+	}
+	return;
+}
+//æ³¨æ„Exam4éœ€è¦ä¿®æ”¹ï¼Œå› ä¸ºåŸæ¥çš„å‡½æ•°RmwHistogramEqualizeColorå¾—åˆ°çš„ç»“æœå’ŒPSæœ‰å‡ºå…¥ï¼Œéœ€è¦æ”¹æˆRmwHistogramEqualizeColor_Re
+//ç¬¬äºŒæ¬¡çš„æƒ³æ³•
+void RmwHistogramEqualizeColor_Re(BYTE* pImg, int width, int height)
+{
+	BYTE* pCur, * pEnd = pImg + width * height * 3;
+	int LUT[256], A[256], g, histogram[256];
+	memset(histogram, sizeof(histogram), 0);
+	//æ±‚ç›´æ–¹å›¾
+	for (pCur = pImg; pCur < pEnd;) {
+		histogram[*(pCur++)]++;
+	}
+	for (int i = 0; i < 256; i++) {
+		histogram[i] /= 3;//è®¡ç®—å¹³å‡ç›´æ–¹å›¾
+	}
+	//LUTæ›´æ–°
+	A[0] = histogram[0];
+	LUT[0] = 255 * A[0] / (width * height);
+	for (g = 1; g< 256; g++) {
+		A[g] = A[g - 1] + histogram[g];
+		LUT[g] = 255 * A[g] / (width * height);
+	}
+	//æŸ¥è¡¨
+	for (pCur = pImg; pCur < pEnd;pCur++) {
+		*pCur = LUT[*pCur];
 	}
 	return;
 }
@@ -231,9 +258,9 @@ void Exam2_4() {
 		getchar();
 		return;
 	}
-	//²ÊÉ«Í¼¾ùºâ»¯
+	//å½©è‰²å›¾å‡è¡¡åŒ–
 	RmwHistogramEqualizeColor(pRgbImg, width, height);
-	//Ğ´»Ø½á¹û
+	//å†™å›ç»“æœ
 	Rmw_Write24BitImg2BmpFile(pRgbImg, width, height, "./res_data/H0201Gry_res.bmp");
 
 }

@@ -1,0 +1,8 @@
+﻿  bmpFile.cpp
+  main3.cpp
+E:\2022大三下课程资料\图像处理\作业\code\WEEK3\Exam3\Exam3\main3.cpp(31,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 10 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  Exam3.vcxproj -> E:\2022大三下课程资料\图像处理\作业\code\WEEK3\Exam3\x64\Release\Exam3.exe

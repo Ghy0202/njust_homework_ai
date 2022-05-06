@@ -1,0 +1,8 @@
+int main(){
+    int x;
+    int y;
+    x=456.8;
+    y=89+123i;
+    x=x+y*x;
+    return 0;
+}

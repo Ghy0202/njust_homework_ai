@@ -1,0 +1,14 @@
+#ifndef _RMW_ALG_MEDIAN_FILTER_H
+#define _RMW_ALG_MEDIAN_FILTER_H
+
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//中值滤波
+//
+///////////////////////////////////////////////////////////////////////////////////////
+double RmwMedianFilter( BYTE *pGryImg, int width, int height,
+	                    int M, int N, //滤波邻域：M列N行
+	                    BYTE *pResImg
+                      );
+#endif
+

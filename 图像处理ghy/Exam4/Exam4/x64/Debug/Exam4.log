@@ -1,0 +1,5 @@
+﻿  main4.cpp
+E:\2022大三下课程资料\图像处理\作业\code\WEEK4\Exam4\Exam4\main4.cpp(43,10): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\2022大三下课程资料\图像处理\作业\code\WEEK4\Exam4\Exam4\main4.cpp(44,10): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\2022大三下课程资料\图像处理\作业\code\WEEK4\Exam4\Exam4\main4.cpp(47,32): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  Exam4.vcxproj -> E:\2022大三下课程资料\图像处理\作业\code\WEEK4\Exam4\x64\Debug\Exam4.exe

@@ -1,0 +1,10 @@
+﻿  main5.cpp
+E:\2022大三下课程资料\图像处理\作业\code\WEEK5\Exam5\Exam5\main5.cpp(421,9): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+E:\2022大三下课程资料\图像处理\作业\code\WEEK5\Exam5\Exam5\main5.cpp(500,8): warning C4101: “pImg”: 未引用的局部变量
+E:\2022大三下课程资料\图像处理\作业\code\WEEK5\Exam5\Exam5\main5.cpp(566,9): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  正在生成代码
+  2 of 26 functions ( 7.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  Exam5.vcxproj -> E:\2022大三下课程资料\图像处理\作业\code\WEEK5\Exam5\x64\Release\Exam5.exe

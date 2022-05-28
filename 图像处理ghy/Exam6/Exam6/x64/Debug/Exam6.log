@@ -1,0 +1,5 @@
+﻿  main6.cpp
+E:\2022大三下课程资料\图像处理\作业\code\WEEK6\Exam6\Exam6\main6.cpp(162,7): warning C4101: “tname”: 未引用的局部变量
+E:\2022大三下课程资料\图像处理\作业\code\WEEK6\Exam6\Exam6\main6.cpp(171,36): warning C4101: “gDbgImg”: 未引用的局部变量
+E:\2022大三下课程资料\图像处理\作业\code\WEEK6\Exam6\Exam6\main6.cpp(265,28): warning C4101: “gDbgImg”: 未引用的局部变量
+  Exam6.vcxproj -> E:\2022大三下课程资料\图像处理\作业\code\WEEK6\Exam6\x64\Debug\Exam6.exe

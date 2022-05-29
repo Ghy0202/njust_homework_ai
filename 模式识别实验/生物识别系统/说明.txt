@@ -1,0 +1,5 @@
+data:存放的是原始的csv数据，因为比较大，所以老师你可以根据实验报告里的链接访问官网；
+imag：是将csv的数据可视化后的图片集合，您可以通过data_utils的函数实现可视化，同样因为体积大不放进来了
+model_data:模型训练结果.pkl保存，您可以通过train获得您的.pkl
+MyData:调用摄像头获取自己的图片作为训练数据，出于隐私考虑就不放了，效果您可以运行catchData获得
+其他实验：您可以访问我的github：https://github.com/Ghy0202/njust_homewaork_ai获得其他实验的项目代码

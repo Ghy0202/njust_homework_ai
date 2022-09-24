@@ -1,1 +1,2 @@
-123
+参考《Computer Priciples and Design in Verilog HDL(2015, 李亚民).pdf》
+可以直接用vivado打开项目

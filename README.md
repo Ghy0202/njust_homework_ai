@@ -36,3 +36,14 @@
 1. 实现基于verilog语言的五段流水线CPU
 2. 提供参考教材（多周期的CPU可以根据教材自己编写）
 3. 可以直接解压code.zip在vivado中打开
+
+## 大四下-关于硬件课设2
+1. 实现第二段机械臂按照颜色搬运物体到指定位置
+2. 实现小车按照颜色搬运物体到指定位置
+----
+![image](https://user-images.githubusercontent.com/70525487/230304219-848e1226-769f-418d-a344-2b779aa929d8.png)
+![image](https://user-images.githubusercontent.com/70525487/230304270-1e2c0f45-d0ca-4501-8ffe-dfca1a6d9de9.png)
+![image](https://user-images.githubusercontent.com/70525487/230304321-8664bef1-5ba0-46db-96b7-3b08c16e5693.png)
+![image](https://user-images.githubusercontent.com/70525487/230304365-682a517c-5c47-437f-900a-abc303f4f953.png)
+
+
